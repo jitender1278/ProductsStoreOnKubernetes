@@ -1,5 +1,5 @@
 pool:
-  vm-image: macOS-latest
+  vm-image: ubuntu-latest
 
 steps:
 - bash: |
