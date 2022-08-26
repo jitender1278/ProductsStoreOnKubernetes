@@ -13,11 +13,13 @@ pool:
 steps:
 - bash: |
    brew install gitleaks
-   
-- task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
-  displayName: 'Gitleaks scan'
-  inputs:
-    scanmode: all
-    reportformat: json
-    taskfailonexecutionerror: false
-  enabled: false
+   gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
+  displayName: 'Bash Script'
+  
+# - task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
+#   displayName: 'Gitleaks scan'
+#   inputs:
+#     scanmode: all
+#     reportformat: json
+#     taskfailonexecutionerror: false
+#   enabled: false
