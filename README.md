@@ -96,6 +96,8 @@ $ docker push $registry/mvc-app:1.0
 5.3) $ minikube dashboard  
 ```
 
+###
+
 ### 6) Deploy to Kubernetes using Kubectl CLI  
 	
 ```console
