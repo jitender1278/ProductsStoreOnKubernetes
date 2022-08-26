@@ -16,11 +16,17 @@ steps:
 #    gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
 #   displayName: 'Bash Script'
 
-- task: Gitleaks@2
+# - task: Gitleaks@2
+#   inputs:
+#     scanlocation: '$(Build.SourcesDirectory)'
+#     configtype: 'predefined'
+#     predefinedconfigfile: 'GitleaksUdmCombo.toml'
+#     reportformat: 'sarif'
+#     scanmode: 'changes'
+- task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
+  displayName: 'Gitleaks scan'
   inputs:
-    scanlocation: '$(Build.SourcesDirectory)'
-    configtype: 'predefined'
-    predefinedconfigfile: 'GitleaksUdmCombo.toml'
-    reportformat: 'sarif'
-    scanmode: 'changes'
-    
+    configtype: default
+    scanmode: prevalidation
+    reportformat: json
+    taskfailonexecutionerror: false
