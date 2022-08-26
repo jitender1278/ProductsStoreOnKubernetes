@@ -27,7 +27,7 @@ steps:
   displayName: 'Gitleaks scan'
   inputs:
     configtype: default
-    scanmode: changes
+    scanmode: all
     reportformat: json
     taskfailonexecutionerror: false
     scanonlychanges: true
