@@ -22,3 +22,5 @@ steps:
     configtype: 'predefined'
     predefinedconfigfile: 'GitleaksUdmCombo.toml'
     reportformat: 'sarif'
+    scanmode: 'prevalidation'
+    
