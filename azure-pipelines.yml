@@ -15,12 +15,12 @@ steps:
 #    brew install gitleaks
 #    gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
 #   displayName: 'Bash Script'
-  
+
 - task: Gitleaks@2
   inputs:
     scanlocation: '$(Build.SourcesDirectory)'
     configtype: 'predefined'
     predefinedconfigfile: 'GitleaksUdmCombo.toml'
     reportformat: 'sarif'
-    scanmode: 'prevalidation'
+    scanmode: 'changes'
     
