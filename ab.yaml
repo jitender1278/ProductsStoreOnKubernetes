@@ -2,3 +2,5 @@ user: password
 secret: jitender12@12
 password
 secrets: API_KEY
+pass: pass@123
+password: password@123
