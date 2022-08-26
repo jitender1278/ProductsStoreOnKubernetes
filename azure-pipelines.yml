@@ -11,15 +11,15 @@
 pool:
   name: Azure Pipelines 
 steps:
-- bash: |
-   brew install gitleaks
-   gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
-  displayName: 'Bash Script'
+# - bash: |
+#    brew install gitleaks
+#    gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
+#   displayName: 'Bash Script'
   
-# - task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
-#   displayName: 'Gitleaks scan'
-#   inputs:
-#     scanmode: all
-#     reportformat: json
-#     taskfailonexecutionerror: false
-#   enabled: false
+- task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
+  displayName: 'Gitleaks detect'
+  inputs:
+    scanmode: all
+    reportformat: json
+    taskfailonexecutionerror: false
+  enabled: false
