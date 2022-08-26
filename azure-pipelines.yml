@@ -1,9 +1,23 @@
-pool:
-  vm-image: ubuntu-latest
+# pool:
+#   vm-image: ubuntu-latest
 
+# steps:
+# - bash: |
+#    brew install gitleaks
+   
+#    gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
+#   displayName: 'Bash Script'
+
+pool:
+  name: Azure Pipelines 
 steps:
 - bash: |
    brew install gitleaks
    
-   gitleaks --repo-path=. --config=.gitleaks.toml --verbose --pretty --redact
-  displayName: 'Bash Script'
+- task: Foxholenl.Gitleaks.foxholenl-gitleaks.Gitleaks@2
+  displayName: 'Gitleaks scan'
+  inputs:
+    scanmode: all
+    reportformat: json
+    taskfailonexecutionerror: false
+  enabled: false
